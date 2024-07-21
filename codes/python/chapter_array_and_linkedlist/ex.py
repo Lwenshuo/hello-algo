@@ -7,9 +7,39 @@ def while_loop(num: int) ->int:
     while i <= num:
         res += i
         i += 1
+        i = i*2
     return res
+
+def double_loop(num: int) ->int:
+    """double loop"""
+    res = ""
+    for i in range(1, num):
+        for j in range(1, num):
+            res += f"({i} {j});"
+    return res
+
+def recur(num: int) ->int:
+    """recursion"""
+    if num == 2:
+        return 2
+    return num + recur(num-1)
+
+def tail_recur(num: int, res: int) ->int:
+    """tail recursion"""
+    if num == 0:
+        return res
+    return tail_recur(num-1, res+num) 
+
+    
+
 
 if __name__ == "__main__":
     num = 5
     res = while_loop(num)
     print("result=", res)
+    
+    res_f = double_loop(num)
+    print("result_double_loop=", res_f)
+    
+    res_recur = recur(num)
+    print("result_recur=", res_recur)
