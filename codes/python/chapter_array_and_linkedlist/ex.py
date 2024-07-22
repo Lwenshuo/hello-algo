@@ -30,8 +30,19 @@ def tail_recur(num: int, res: int) ->int:
         return res
     return tail_recur(num-1, res+num) 
 
-    
+def fib(num: int) -> int:
+    if num == 0 or num == 1:
+        return num - 1
+    return (fib(num-1) + fib(num-2))
 
+def for_recur_loop(num: int) ->int:
+    stack = []
+    res = 0
+    for i in range(n,0,-1):
+        stack.append(i)
+    while stack:
+        res += stack.pop()
+    return res
 
 if __name__ == "__main__":
     num = 5
@@ -43,3 +54,6 @@ if __name__ == "__main__":
     
     res_recur = recur(num)
     print("result_recur=", res_recur)
+    
+    res_fib = fib(num)
+    print("result_fib=", res_fib)
